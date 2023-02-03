@@ -13,3 +13,6 @@ price int not null,
 amount int not null,
 brand_id int foreign key references brands(id),
 );
+CREATE VIEW [product] AS 
+SELECT id , name,price
+FROM product

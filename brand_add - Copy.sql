@@ -26,26 +26,10 @@ select * from brand order by name desc
 select * from product order by price asc
 select * from product where brand_id =1
 select * from brand where id=1
-select * from product where amount < 11 
+select * from product where  amount < 11 
 dbcc checkident (product,reseed,0)
 SELECT COUNT(product.id) as Soluong,product.brand_id
+
 FROM product 
 GROUP BY product.brand_id;
-
-CREATE VIEW view_all AS 
-SELECT id , name,price
-FROM product
-
-create view View_SanPham_Hang as 
-select id ,name ,brands.name
-from brands,product
-
-create view View_SanPham_Hang as 
-select product.id ,product.name,brand.name as name_company
-from product
-left join brand on product.brand_id=brand.id
-
-select * from View_SanPham_Hang
-select * from view_all
-select * from sanpham
 delete from product
